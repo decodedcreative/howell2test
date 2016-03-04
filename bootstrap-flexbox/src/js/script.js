@@ -9,7 +9,7 @@ attachFastClick(document.body);
 clientname.website = (function () {
 	var
 	common = {
-		variableOne: 'var1'
+		settingOne: 'var1'
 	},
 
 	myFirstMethod = function(){
