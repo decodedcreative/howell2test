@@ -1,0 +1,100 @@
+/* =================================================================
+
+    MIXINS
+
+================================================================= */
+
+	/* -----------------------------------------------------------------
+	    breakpoints
+	----------------------------------------------------------------- */
+
+
+		@mixin bp($size) {
+
+			@if $size == xs {
+
+				@media (max-width: $screenXS) {
+					@content;
+				}
+			}@else if $size == s {
+
+				@media (min-width: $screenS) {
+					@content;
+				}
+
+			} @else if $size == m {
+
+				@media (min-width: $screenM) {
+					@content;
+				}
+
+			} @else if $size == l {
+
+				@media (min-width: $screenL) {
+					@content;
+				}
+
+			} @else if $size == xl {
+
+				@media (min-width: $screenXL) {
+					@content;
+				}
+
+			} @else {
+
+				@media (min-width: $size) {
+					@content;
+				}
+
+			}
+
+		}
+
+
+		/* -----------------------------------------------------------------
+		    show/hide content
+		----------------------------------------------------------------- */
+
+		@mixin hideOnScreenSize($screenSize, $displayType){
+
+			@if $screenSize == "mobile" {
+
+				display: none;
+
+				@include bp(s){
+					display: $displayType;
+				}
+
+			}
+
+			@if $screenSize == "desktop" {
+
+				display: $displayType;
+
+				@include bp(s){
+					display: none;
+				}
+
+			}
+
+		}
+
+
+		/* -----------------------------------------------------------------
+		    clearfix
+		----------------------------------------------------------------- */
+
+
+		@mixin clearfix(){
+		    clear: both;
+
+			&:before,
+			&:after {
+				content: "";
+				display: table;
+			}
+
+			&:after {
+				clear:both;
+			}
+		}
