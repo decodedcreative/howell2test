@@ -1,7 +1,7 @@
 // main.js
 
 
-//import { drumkit } from "./modules/drum-kit.js";
+import { drumkit } from "./modules/drum-kit.js";
 
 //import { customvideo } from "./modules/custom-video.js";
 
@@ -9,7 +9,7 @@
 
 //import { mouseshadow } from "./modules/mouse-shadow.js";
 
-import { webcam } from "./modules/webcam.js";
+//import { webcam } from "./modules/webcam.js";
 
 
 
